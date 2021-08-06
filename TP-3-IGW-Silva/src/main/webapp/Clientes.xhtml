@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xml:lang="es">
+
+    <h:head>
+        <title>Clientes</title>
+    </h:head>
+    <h:body>
+        <div><h2  style="text-align: center;"> Registro de clientes</h2></div>
+        <h:form>
+            <h:panelGrid columns="6" cellpadding="5px;">    
+                <h:outputLabel value="Nombre: "/>
+                <h:inputText value="#{clienteMB.cliente.nombre}" 
+                             maxlength="20"
+                             required="true"
+                             requiredMessage="Este campo es obligatorio!"
+                             style="width: 200px;"/>
+                <h:outputLabel value="Apellido: "/>
+                <h:inputText value="#{clienteMB.cliente.apellido}" 
+                             maxlength="20"
+                             required="true"
+                             requiredMessage="Este campo es obligatorio!"
+                             style="width: 200px;"/>
+                <h:outputLabel value="Edad: "/>
+                <h:inputText value="#{clienteMB.cliente.edad}" 
+                             style="width: 200px;"/>
+                <h:outputLabel value="Direccion: "/>
+                <h:inputText value="#{clienteMB.cliente.direccion}" 
+                             maxlength="50"
+                             style="width: 200px;"/>
+                <h:outputLabel value="Email: "/>
+                <h:inputText value="#{clienteMB.cliente.email}" 
+                             maxlength="30"
+                             style="width: 200px;"/>
+                <h:outputLabel value="Telefono: "/>
+                <h:inputText value="#{clienteMB.cliente.telefono}" 
+                             maxlength="25"
+                             style="width: 200px;"/>
+                <h:outputLabel value="Tipo Documento: "/>
+                <h:selectOneMenu value="#{clienteMB.cliente.tipoDocumento}" style="width: 208px;">
+                    <f:selectItems value="#{tipoDocumentoMB.tipoDocumento}" var="t"
+                                   itemValue="#{t}" itemLabel="#{t}"/>
+                </h:selectOneMenu>
+                <h:outputLabel value="Numero Documento: "/>
+                <h:inputText value="#{clienteMB.cliente.numeroDocumento}" 
+                             maxlength="8"
+
+                             style="width: 200px;"/>
+                <h:outputLabel value=""/>
+                <h:commandButton value="GUARDAR"  action="#{clienteMB.save()}" style="width: 208px; height: 35px;"/>
+                <h:outputLabel value="#{clienteMB.mensaje}"/>
+            </h:panelGrid>
+        </h:form> 
+        <h:form>
+            <h:panelGrid columns="5" cellpadding="8px;">  
+                <h:outputLabel value="Buscar por apellido: " style="margin-right: 10px;width: 208px; height: 35px;"/>
+                <h:inputText value="#{clienteMB.buscarApellido}"/>
+                <h:outputLabel value="Buscar por documento: " style="width: 208px; height: 35px;"/>
+                <h:inputText value="#{clienteMB.buscarNumeroDocumento}"/>
+                <h:commandButton value="BUSCAR" style="width: 208px; height: 40px;"/>
+            </h:panelGrid>
+        </h:form>
+        <h:dataTable value="#{clienteMB.likeApellidoNumeroDocumento}" var="c" style="padding-top: 10px;" >
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.id}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Nombre"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.nombre}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Apellido"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.apellido}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Edad"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.edad}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Direccion"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.direccion}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Email"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.email}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Telefono"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.telefono}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Tipo Documento"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.tipoDocumento}"></h:outputText>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Numero documento"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{c.numeroDocumento}"></h:outputText>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

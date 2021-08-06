@@ -1,0 +1,13 @@
+ar\org\centro8\curso\java\web\managedbean\TipoDocumentoMB.class
+ar\org\centro8\curso\java\web\services\JavaEE8Resource.class
+ar\org\centro8\curso\java\web\services\JAXRSConfiguration.class
+ar\org\centro8\curso\java\web\managedbean\ClienteMB.class
+ar\org\centro8\curso\java\web\utils\TableHtml.class
+ar\org\centro8\curso\java\web\repositories\interfaces\I_ClienteRepository.class
+ar\org\centro8\curso\java\web\repositories\jdbc\ClienteRepository.class
+ar\org\centro8\curso\java\web\test\TestConnector.class
+ar\org\centro8\curso\java\web\entities\Cliente.class
+ar\org\centro8\curso\java\web\enums\TipoDocumento.class
+ar\org\centro8\curso\java\web\test\TestClienteRepository.class
+ar\org\centro8\curso\java\web\connectors\Connector.class
+ar\org\centro8\curso\java\web\services\ClienteService.class
